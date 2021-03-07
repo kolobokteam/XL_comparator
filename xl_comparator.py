@@ -12,6 +12,8 @@ from tabulate import tabulate
 
 filename1 = "1_й_Этап_Отделка_квартир,_МОП,_внутренние_инженерные_системы_от.xlsx"
 filename2 = "1_й_Этап_Отделка_квартир,_МОП,_внутренние_инженерные_системы_от (2).xlsx"
+# filename1 = "file1.xlsx"
+# filename2 = "file2.xlsx"
 
 file1 = openpyxl.load_workbook(filename1)
 file2 = openpyxl.load_workbook(filename2)
@@ -45,11 +47,9 @@ else:
     pass
 
 
-for sheet1_row in sheet1.rows:
-    pass
-for sheet2_row in sheet2.rows:
-    pass
-if sheet1_row == sheet2_row:
-    print("Строки равны")
-else:
-    print("Строки не одинаковые")
+for sheet1_row, sheet2_row in zip(sheet1.rows, sheet2.rows):
+    for cell_sheet1_row, cell_sheet2_row in zip(sheet1_row, sheet2_row):
+        if cell_sheet1_row.value == cell_sheet2_row.value:
+            print("ячейки равны", cell_sheet1_row)
+        else:
+            print("ячейки не одинаковые", cell_sheet1_row)
