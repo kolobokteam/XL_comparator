@@ -8,6 +8,24 @@ Created on Wed Mar  3 17:24:18 2021
 import openpyxl
 
 def table_select(filename1, filename2):
+    """
+    
+
+    Parameters
+    ----------
+    filename1 : TYPE
+        DESCRIPTION.
+    filename2 : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    sheets_file1 : TYPE
+        DESCRIPTION.
+    sheets_file2 : TYPE
+        DESCRIPTION.
+
+    """
     file1 = openpyxl.load_workbook(filename1)
     file2 = openpyxl.load_workbook(filename2)
     
