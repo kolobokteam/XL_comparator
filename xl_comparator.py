@@ -53,3 +53,4 @@ for sheet1_row, sheet2_row in zip(sheet1.rows, sheet2.rows):
             print("ячейки равны", cell_sheet1_row)
         else:
             print("ячейки не одинаковые", cell_sheet1_row)
+
