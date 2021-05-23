@@ -52,6 +52,7 @@ else:
             sheet2 = file2.active
 
 
+<<<<<<< HEAD
 for sheet1_row, sheet2_row in zip_longest(sheet1.rows, sheet2.rows):
     for cell_sheet1_row, cell_sheet2_row in zip_longest(sheet1_row, sheet2_row):
         with open("result.txt", "a") as file:
@@ -62,3 +63,12 @@ for sheet1_row, sheet2_row in zip_longest(sheet1.rows, sheet2.rows):
                     print("Not equal")
             except:
                 pass
+=======
+for sheet1_row, sheet2_row in zip(sheet1.rows, sheet2.rows):
+    for cell_sheet1_row, cell_sheet2_row in zip(sheet1_row, sheet2_row):
+        if cell_sheet1_row.value == cell_sheet2_row.value:
+            print("ячейки равны", cell_sheet1_row)
+        else:
+            print("ячейки не одинаковые", cell_sheet1_row)
+
+>>>>>>> 66e1128b802c4d611415404ea97358d987ad7cec
