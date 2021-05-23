@@ -13,17 +13,17 @@ def table_select(filename1, filename2):
 
     Parameters
     ----------
-    filename1 : TYPE
-        DESCRIPTION.
-    filename2 : TYPE
-        DESCRIPTION.
+    filename1 : string
+        Первый файл для сравнения.
+    filename2 : string
+        Второй файл для сравнения.
 
     Returns
     -------
-    sheets_file1 : TYPE
-        DESCRIPTION.
-    sheets_file2 : TYPE
-        DESCRIPTION.
+    sheets_file1 : list of string
+        Список названий листов в книге1 (первом excel-файле).
+    sheets_file2 : list of string
+        Список названий листов в книге2 (втором excel-файле).
 
     """
     file1 = openpyxl.load_workbook(filename1)
