@@ -1,37 +1,26 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun May 23 13:43:47 2021
+Created on Sat Jun 19 10:24:52 2021
 
 @author: admOS
 """
 
-import pandas as pd
-  
-#Reading two Excel Sheets
-filename1 = "file1.xlsx"
-filename2 = "file2.xlsx"
+def summa(maximum, num1, num2):
+    nums = [i for i in range(1, maximum) if (i%num1 == 0 or i%num2 == 0)]
+    return sum(nums)
 
-sheet1 = pd.read_excel(r'file1.xlsx')
-sheet2 = pd.read_excel(r'file2.xlsx')
-  
-# Iterating the Columns Names of both Sheets
-for i,j in zip(sheet1,sheet2):
-     
-    # Creating empty lists to append the columns values    
-    a,b =[],[]
-  
-    # Iterating the columns values
-    for m, n in zip(sheet1[i],sheet2[j]):
-  
-        # Appending values in lists
-        a.append(m)
-        b.append(n)
-  
-    # Sorting the lists
-    a.sort()
-    b.sort()
-  
-    # Iterating the list's values and comparing them
-    for m, n in zip(range(len(a)), range(len(b))):
-        if a[m] != b[n]:
-            print('Column name : \'{}\' and Row Number : {}'.format(i,m))
+def task2(maximum):
+    fibo = [1, 2]
+    i = sum(fibo)
+    while i < maximum:
+        i = fibo[-1] + fibo[-2]
+        fibo.append(i)
+    row = []
+    for index, num in enumerate(fibo, 1):
+        if index%2 == 0:
+            row.append(num)
+    return sum(row)
+
+if __name__ == "__main__":
+    # print(summa(1000, 3, 5))
+    print(task2(4_000_000))
